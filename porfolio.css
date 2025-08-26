@@ -1,0 +1,103 @@
+.h-1{
+    display: flex;
+    position: absolute;
+    left: 70%;
+    justify-content: space-around;
+    width: 250px;
+    
+}
+
+a{
+text-decoration: none;
+color:inherit
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    padding-left: 30px;
+}
+.name-photo{
+ padding-bottom: 30px;
+ padding-top: 20px;
+}
+
+header{
+    background-color: #F5F5F5;
+    
+}
+
+
+.skill-a{
+    display: flex;
+    list-style: none;        /* Removes default bullets */
+    padding: 0;
+    margin: 0;
+
+}
+
+#projects-grid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns:1fr 1fr 1fr;
+    padding-bottom: 70px;
+    padding-top: 30px;
+}
+
+.block{
+    position: relative;
+    height: 200px;
+    width: 250px;
+    border:2px solid black;
+
+}
+
+.About-me{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+
+footer{
+    padding-top: 40px;
+}
+
+.foot{
+    padding: 12px;
+}
+
+.block img,
+.block video{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit:fill;
+}
+
+.block:hover{
+    transform: scale(1.2);
+}
+
+
+img:hover{
+    
+    transform: all 0.5s ease-out;
+}
+
+
+video:hover{
+    
+    width: 250px;
+    height: 200px;
+    transition: all 0.3s ease-in;
+    object-fit:fill ;
+    cursor: pointer;
+}
+
+
+h4{
+    padding: 20px;
+}
+
