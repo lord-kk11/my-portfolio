@@ -1,30 +1,55 @@
+* {
+  margin: 0;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.name-photo{
+    font-size: 25px;
+}
+
+
 .h-1{
     display: flex;
-    position: absolute;
+    position:fixed;
     left: 70%;
     justify-content: space-around;
     width: 250px;
     
 }
 
+.n-a{
+    font-size: 20px;
+}
+
 a{
 text-decoration: none;
-color:inherit
+color: inherit;
+} 
+
+a:hover{
+    color: rgb(235, 170, 30);
 }
+
+a:active{
+    text-decoration: underline;
+}
+
+
+
+
 html{
     scroll-behavior: smooth;
 }
+
 body{
     padding-left: 30px;
 }
-.name-photo{
- padding-bottom: 30px;
- padding-top: 20px;
-}
+
 
 header{
-    background-color: #F5F5F5;
-    
+   
+    padding-bottom: 80px;
 }
 
 
@@ -55,6 +80,7 @@ header{
 .About-me{
     padding-top: 30px;
     padding-bottom: 50px;
+
 }
 
 
@@ -99,5 +125,37 @@ video:hover{
 
 h4{
     padding: 20px;
+    
+}
+
+.fa-sun{
+    color: gold;
+}
+
+html.darkmode body{
+    background-Color :#212131ff;
+    color : white;
+}
+
+html.darkmode header{
+    background-Color : #212131ff;
+}
+
+html.darkmode a{
+    color: white;
+}
+
+
+html.lightmode body{
+    background-Color :#ffffff;
+    color : #000000;
+}
+
+html.lightmode header{
+    background-Color : #ffffff;
+}
+
+html.lightmode a{
+    color: black;
 }
 
