@@ -1,34 +1,93 @@
-* {
-  margin: 0;
-  padding: 2px;
-  box-sizing: border-box;
+
+/*change the html*/
+html.darkmode body{
+    background-color :rgba(33,33,49,1);
+    color : white;
 }
 
-.name-photo{
-    font-size: 25px;
+html.darkmode header{
+    background-Color :rgba(33,33,49,1);
+}
+
+html.darkmode a{
+    color:  white;
+}
+html.darkmode  a:hover{
+     color: rgb(235, 170, 30);
 }
 
 
-.h-1{
-    display: flex;
-    position:fixed;
-    left: 70%;
-    justify-content: space-around;
-    width: 250px;
+html.lightmode body{
+    background-Color :  rgb(250, 241, 223);
+    color : #000000;
+}
+
+html.lightmode header{
+    background-Color : rgb(250, 241, 223);
+}
+
+html.lightmode a{
+    color: black;
+}
+
+html.lightmode a:hover{
+    color: rgb(235, 170, 30);
+}
+
+html.lightmode #stack-container{
+    background-color:  rgb(240, 239, 238);;
+}
+
+html.lightmode .tech-name{
+    color:#000000
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+    transition: background-color 0.5 ease-in-out, color o.5s ease-in-out;
     
 }
 
-.n-a{
-    font-size: 20px;
+body{
+    margin: 0;
+    font-family: sans-serif;
+    padding: 0;
 }
 
-a{
-text-decoration: none;
-color: inherit;
-} 
+/*controls the header*/
 
-a:hover{
-    color: rgb(235, 170, 30);
+.h-1 {
+  position:relative;
+  top: 0;
+  right: 0;
+  height: 10vh;
+  width: auto; /* let content define width */
+  color: white; 
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding:1rem,2rem;
+
+}
+
+.h-1 a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.h-1 a:hover {
+  color: rgb(235, 170, 30);
+  color: #000;
+  transform: scale(1.05);
 }
 
 a:active{
@@ -36,126 +95,234 @@ a:active{
 }
 
 
+ .h-1:focus-within  a,
+    .h-1:hover  a{
+      display: flex;
+      width: auto;
+      flex-wrap: wrap;
+    }
+
+/*control the name and profesion   */
 
 
-html{
-    scroll-behavior: smooth;
+
+.name-photo{
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   gap:10px;
+   text-align: center;
+  padding-top:2rem;
+    
 }
 
-body{
-    padding-left: 30px;
+.name-photo h1,
+.name-photo h3,
+.name-photo p {
+    margin:0;
+    line-height:1.2;
+    font-size: 2rem;
 }
 
-
-header{
-   
-    padding-bottom: 80px;
+.n-a{
+    font-size: 1.8rem;
 }
 
-
-.skill-a{
+#connect{
     display: flex;
-    list-style: none;        /* Removes default bullets */
-    padding: 0;
-    margin: 0;
-
+    width: auto;
+    justify-content: space-around;
+    padding-left:1rem ;
+    gap:1rem;
 }
+
+
+/*moon*/ 
+
+#moon{
+    text-align: center;
+    padding: 3rem;
+}
+
+    
+
+.fa-sun{
+    color: rgba(255, 217, 2, 0.801);
+}
+
+
+
+/*about me and skills*/
+
+.About-me{
+   padding: 1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+ /*tech stack*/
+#tech{
+    padding: 2rem;
+    display: block;
+    justify-items: center;
+  
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+#stack-container{
+width: 90vw;
+max-width: 1200px;
+ grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); /* default: 4 columns */
+ margin: 0 auto;
+background-color: #1a314e;
+display: grid;
+align-items: center;
+justify-items: center;
+}
+.tech-stack{
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.tech-name{
+display:block;
+color:#ffff;
+opacity: 0;
+}
+
+
+/*projects*/
 
 #projects-grid{
     display: grid;
-    gap: 10px;
-    grid-template-columns:1fr 1fr 1fr;
-    padding-bottom: 70px;
-    padding-top: 30px;
+    gap: 1rem;
+    grid-template-columns:repeat(4, 1fr);;
+    padding: 1rem;
 }
 
 .block{
     position: relative;
-    height: 200px;
-    width: 250px;
+    height: 22vw;
+    width: 30vw;
     border:2px solid black;
-
-}
-
-.About-me{
-    padding-top: 30px;
-    padding-bottom: 50px;
-
-}
-
-
-footer{
-    padding-top: 40px;
-}
-
-.foot{
-    padding: 12px;
-}
+   overflow: hidden;}
 
 .block img,
 .block video{
-    position: relative;
-    top: 0;
-    left: 0;
+  
     width: 100%;
-    height:100%;
-    object-fit:fill;
+    height: 100%;
+    display: block;
+    object-fit:cover;
 }
 
-.block:hover{
-    transform: scale(1.2);
+
+
+#codelive{
+    display: flex;
+    justify-content:space-evenly;
+    background-color: rgb(38, 41, 13);
+    
 }
+
 
 
 img:hover{
     
-    transform: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 
 video:hover{
-    
-    width: 250px;
-    height: 200px;
+    transform: scale(1.05);
     transition: all 0.3s ease-in;
     object-fit:fill ;
     cursor: pointer;
 }
 
 
-h4{
-    padding: 20px;
-    
+#contact{
+    padding: 1rem;
 }
 
-.fa-sun{
-    color: gold;
-}
-
-html.darkmode body{
-    background-Color :#212131ff;
-    color : white;
-}
-
-html.darkmode header{
-    background-Color : #212131ff;
-}
-
-html.darkmode a{
-    color: white;
+footer{
+    padding:1rem;
 }
 
 
-html.lightmode body{
-    background-Color :#ffffff;
-    color : #000000;
+
+
+
+
+
+
+
+button{
+    border: 2px solid red outset;
+    background-color: rgb(202, 183, 15);
+    border-radius: 10vh;
+}
+button:hover{
+    border: 2px solid red inset;
+  background-color: rgb(141, 128, 12);
 }
 
-html.lightmode header{
-    background-Color : #ffffff;
+
+
+
+
+/*for smaller devices (mobile phones)*/
+@media (max-width:600px) {
+    #header-icon{
+       display: flex;
+       justify-items: flex-end
+    }
+    .h-1 a{
+        display: none;
+    }
+  
+    #stack-container {
+        grid-template-columns: repeat(2, 1fr) ;
+     
+    }
+
+#moon{
+    width: 10vw;
 }
 
-html.lightmode a{
-    color: black;
+
+
 }
 
+/*medium devices (tablets & laptop)*/ 
+@media (min-width:601px) and (max-width:1024px) {
+    #stack-container {
+        grid-template-columns:repeat(4, 1fr);
+        /*grid-template-rows: repeat(2, auto);*/
+    }
+    #header-icon{
+        display: none;
+    }
+    .h-1 a{
+     display: flex;
+    }
+}
+
+/*Large devices (desktop)*/
+@media (min-width:1025px) {
+    #stack-container{
+        grid-template-columns: repeat(4,1fr);
+    }
+      #header-icon{
+        display: none;
+    }
+
+    .h-1 a{
+        display: flex;
+        
+    }
+}
