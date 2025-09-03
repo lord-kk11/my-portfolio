@@ -59,48 +59,41 @@ body{
 /*controls the header*/
 
 .h-1 {
-  position:relative;
-  top: 0;
-  right: 0;
-  height: 10vh;
-  width: auto; /* let content define width */
-  color: white; 
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: row;
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: end;
-  padding:1rem,2rem;
-
+  gap: 1rem;
+  position: relative;
+  padding: 0 1rem;
+  height: 10vh;
 }
 
-.h-1 a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: none;
+
+  nav a{
+       text-decoration: none;
+  }
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+ 
 }
 
-.h-1 a:hover {
+.menu a:hover {
   color: rgb(235, 170, 30);
-  color: #000;
   transform: scale(1.05);
 }
 
-a:active{
-    text-decoration: underline;
+.header-icon{
+    display: flex;
+    cursor: pointer;
 }
 
 
- .h-1:focus-within  a,
-    .h-1:hover  a{
-      display: flex;
-      width: auto;
-      flex-wrap: wrap;
-    }
+
 
 /*control the name and profesion   */
 
@@ -132,7 +125,7 @@ a:active{
     display: flex;
     width: auto;
     justify-content: space-around;
-    padding-left:1rem ;
+    padding-left:2rem ;
     gap:1rem;
 }
 
@@ -277,24 +270,31 @@ button:hover{
 
 /*for smaller devices (mobile phones)*/
 @media (max-width:600px) {
-    #header-icon{
-       display: flex;
-       justify-items: flex-end
-    }
-    .h-1 a{
-        display: none;
-    }
-  
-    #stack-container {
-        grid-template-columns: repeat(2, 1fr) ;
-     
-    }
-
-#moon{
-    width: 10vw;
-}
+    .menu {
+    display: none;
+    flex-direction: row;
+    gap: 1rem;
+    position: absolute;
+    top: 30%;
+    right: 30%;
+      padding: 1rem;
+    background-color: inherit;
+    border-radius: 8px;
+    z-index: 100;
+    font-size: larger;
+ 
+  }
 
 
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked + .header-icon + .menu {
+    display: flex;
+  }
+
+  .header-icon {
+    display: flex;
+
+  }
 
 }
 
@@ -304,11 +304,12 @@ button:hover{
         grid-template-columns:repeat(4, 1fr);
         /*grid-template-rows: repeat(2, auto);*/
     }
-    #header-icon{
+    .header-icon{
         display: none;
     }
-    .h-1 a{
+    .menu{
      display: flex;
+    
     }
 }
 
@@ -317,12 +318,12 @@ button:hover{
     #stack-container{
         grid-template-columns: repeat(4,1fr);
     }
-      #header-icon{
+      .header-icon{
         display: none;
     }
 
-    .h-1 a{
+    .menu{
         display: flex;
-        
+         
     }
 }
