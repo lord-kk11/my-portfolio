@@ -7,23 +7,33 @@ const hc = document.getElementById("hc");
 const mainmoon = document.getElementById("main-moon");
 const head = document.getElementById("header");
 
-blocks.forEach((block) => {
-  const image = block.querySelector("img");
-  const video = block.querySelector("video");
 
-  block.addEventListener("mouseenter", () => {
-    image.style.display = "none";
-    video.style.display = "block";
-    video.play();
-  });
+const codelivebuttons = document.querySelectorAll('.codelive')
 
-  block.addEventListener("mouseleave", () => {
-    image.style.display = "block";
-    video.style.display = "none";
-    video.pause();
-    video.currentTime = 0;
-  });
-});
+blocks.forEach((block)=>{
+
+const target = block.querySelector('.codelive')
+
+  const hoveranim = gsap.to(target,{
+    y:-10,
+    scale:1.001,
+    paused:true,
+  })
+  block.addEventListener("mouseenter",()=>{
+    hoveranim.play()
+    })
+
+      block.addEventListener("mouseleave",() => {
+      hoveranim.reverse()})
+}
+)
+
+
+
+
+
+
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -98,14 +108,14 @@ if (savedtheme == "darkmode") {
   mainmoon.classList.add("fa-sun");
   mainmoon.classList.remove("fa-moon");
       moonMessage.innerHTML = "dark mode";
-   t2.to("#moon", {duration:4, x: window.innerWidth * 0.65, ease: "power2.inOut"})
+   t2.to("#moon", {duration:4, x: window.innerWidth * 0.1,})
 } else {
   html.classList.add("lightmode");
   html.classList.remove("darkmode");
   mainmoon.classList.add("fa-moon");
   mainmoon.classList.remove("fa-sun");
   moonMessage.innerHTML = "light-mode";
-   t2.to("#moon", {duration:4, x:window.innerWidth * 0, ease: "power2.inOut"})
+   t2.to("#moon", {duration:4, x:window.innerWidth * 0, })
 }
 
 
@@ -118,9 +128,9 @@ let moon = savedtheme === "dark mode";
 
 const t1 = gsap.timeline();
 
-t1.to(".n-a", { duration: 1, x: "5VW" })
-  .to(".name", { duration: 1, x: "5VW" })
-  .to(".n-s", { duration: 1, x: "5VW" });
+t1.to(".n-a", { duration: 1, x: "2VW" })
+  .to(".name", { duration: 1, x: "2VW" })
+  .to(".n-s", { duration: 1, x: "2VW" });
 
 
 
@@ -132,7 +142,7 @@ mainmoon.addEventListener("click", () => {
     mainmoon.classList.remove("fa-moon");
     mainmoon.classList.add("fa-sun");
     moonMessage.innerHTML = "dark-mode";
-     t2.to("#moon", {duration:4, x: window.innerWidth * 0.65, ease: "power2.inOut"})
+     t2.to("#moon", {duration:4, x: window.innerWidth * 0.1, ease: "power2.inOut"})
   } else {
     html.classList.add("lightmode");
     html.classList.remove("darkmode");
